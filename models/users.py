@@ -10,7 +10,7 @@ class User:
     @staticmethod
     def find_by_id(id):
         cur = mysql.connection.cursor()
-        cur.execute('SELECT * FROM users WHERE id = %s', (id,))
+        cur.execute('SELECT * FROM alu_info WHERE id = %s', (id,))
         row = cur.fetchone()
         cur.close()
 

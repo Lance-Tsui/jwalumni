@@ -2,19 +2,15 @@ from models import mysql
 
 # Define the User model
 class User:
-    def __init__(self, id, username, email):
-        self.id = id
-        self.username = username
-        self.email = email
+    def __init__(self, title):
+        self.title = title
 
     @staticmethod
-    def find_by_id(id):
+    def find_all():
         cur = mysql.connection.cursor()
-        cur.execute('SELECT * FROM alu_info WHERE id = %s', (id,))
+        cur.execute('SELECT title FROM alu_info')
         row = cur.fetchone()
         cur.close()
-
         if row is None:
             return None
-
         return User(*row)

@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from models import mysql, connect_to_database
+from models.users import User
 
 # Initialize the Flask app
 app = Flask(__name__)
@@ -15,7 +16,8 @@ def home():
 # Define the about page route
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    users = User.find_all()
+    return render_template('about.html', users=users)
 
 # Run the Flask app
 if __name__ == '__main__':

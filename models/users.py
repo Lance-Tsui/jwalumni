@@ -13,7 +13,7 @@ class User:
         rows = list(rows)
         users = []
         for row in rows:
-            row = list(row)
+            row = ''.join(row)
             user = User(row)
             users.append(user)
         cur.close()

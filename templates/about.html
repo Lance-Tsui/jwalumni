@@ -9,8 +9,11 @@
     <p>This is the user page.</p>
     <a href="{{ url_for('home') }}">Home</a>
 	<h2>Info: </h2>
+	
     <ul>
-		<li>{{users.title}} </li>
+    {% for user in users %}
+		<li>{{user.title}} </li>
+	{% endfor %}
 	</ul>
 	
 </body>

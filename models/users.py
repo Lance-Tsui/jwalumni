@@ -9,8 +9,12 @@ class User:
     def find_all():
         cur = mysql.connection.cursor()
         cur.execute('SELECT title FROM alu_info')
-        row = cur.fetchone()
+        rows = cur.fetchall()
+        rows = list(rows)
+        users = []
+        for row in rows:
+            row = list(row)
+            user = User(row)
+            users.append(user)
         cur.close()
-        if row is None:
-            return None
-        return User(*row)
+        return users

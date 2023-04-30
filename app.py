@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from models import mysql, connect_to_database
 from models.users import User
+from models.news import News
 
 # Initialize the Flask app
 app = Flask(__name__)
@@ -22,7 +23,8 @@ def explore():
 # Define the news page route
 @app.route('/news')
 def news():
-    return render_template('news.html')
+    news = News.find_news()
+    return render_template('news.html', news=news)
 
 # Run the Flask app
 if __name__ == '__main__':

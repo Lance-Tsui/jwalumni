@@ -11,7 +11,9 @@
 	<h2>Info: </h2>
 	
     <ul>
-    {{users}}
+    	{% for user in users %}
+		<li>{{user[0]}} {{user[1]}} </li>
+	{% endfor %}
 	</ul>
 	
 </body>

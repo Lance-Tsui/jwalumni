@@ -10,7 +10,7 @@
     <a href="{{ url_for('home') }}">Home</a>
 	<h2>News:</h2>
 	{% for new in news %}
-		<li>{{new[0]}} {{new[1]}} {{new[2]}} {{new[3]}} {{new[4]}}</li>
+		<li>{{new.title}} {{new.summary}} {{new.content}} {{new.publishdate}} {{new.name}}</li>
 	{% endfor %}
 	
 </body>

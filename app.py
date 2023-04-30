@@ -19,6 +19,11 @@ def about():
     users = User.find_all()
     return render_template('about.html', users=users)
 
+# Define the news page route
+@app.route('/news')
+def news():
+    return render_template('news.html')
+
 # Run the Flask app
 if __name__ == '__main__':
     app.run(debug=True)

@@ -2,19 +2,15 @@ from models import mysql
 
 # Define the User model
 class User:
-    def __init__(self, title):
+    def __init__(self, title, region):
         self.title = title
+        self.region = region
 
     @staticmethod
     def find_all():
         cur = mysql.connection.cursor()
-        cur.execute('SELECT title FROM alu_info')
+        cur.execute('SELECT title, region FROM alu_info A JOIN alu_region B on A.regionId = B.Id')
         rows = cur.fetchall()
         rows = list(rows)
-        users = []
-        for row in rows:
-            row = ''.join(row)
-            user = User(row)
-            users.append(user)
-        cur.close()
+        users = rows
         return users

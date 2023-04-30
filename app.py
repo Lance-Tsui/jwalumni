@@ -14,10 +14,10 @@ def home():
     return render_template('home.html')
 
 # Define the about page route
-@app.route('/about')
-def about():
+@app.route('/explore')
+def explore():
     users = User.find_all()
-    return render_template('about.html', users=users)
+    return render_template('explore.html', users=users)
 
 # Define the news page route
 @app.route('/news')

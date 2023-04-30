@@ -12,5 +12,9 @@ class User:
         cur.execute('SELECT title, region FROM alu_info A JOIN alu_region B on A.regionId = B.Id')
         rows = cur.fetchall()
         rows = list(rows)
-        users = rows
+        users = []
+        for row in rows:
+            user = User(row[0], row[1])
+            users.append(user)
+            
         return users

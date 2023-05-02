@@ -11,10 +11,13 @@
 
     <div class="container">
         <div class="left-column">
-            <p>Hello World</p>
+            <h2>Summary</h2>
+            {% for new in news %}
+                    <li>{{new.title}}</li>
+            {% endfor %}
         </div>
         <div class="right-column">
-            <h2>News:</h2>
+            <h2>Content</h2>
                 {% for new in news %}
                     <li>{{new.title}} {{new.summary}} {{new.content}} {{new.publishdate}} {{new.name}}</li>
                 {% endfor %}

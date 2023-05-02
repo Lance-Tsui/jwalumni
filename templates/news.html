@@ -2,16 +2,24 @@
 <html>
 <head>
     <title>My Flask App -- News Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <h1>Welcome to my Flask app!</h1>
     <p>This is the news page.</p>
     <a href="{{ url_for('home') }}">Home</a>
-	<h2>News:</h2>
-	{% for new in news %}
-		<li>{{new.title}} {{new.summary}} {{new.content}} {{new.publishdate}} {{new.name}}</li>
-	{% endfor %}
+
+    <div class="container">
+        <div class="left-column">
+            <p>Hello World</p>
+        </div>
+        <div class="right-column">
+            <h2>News:</h2>
+                {% for new in news %}
+                    <li>{{new.title}} {{new.summary}} {{new.content}} {{new.publishdate}} {{new.name}}</li>
+                {% endfor %}
+        </div>
+    </div>
 	
 </body>
 </html>

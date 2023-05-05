@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{% block title %}Alumni Database{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('views.home') }}">Home</a></li>
+      <li><a href="{{ url_for('views.explore') }}">Explore</a></li>
+      <li><a href="{{ url_for('views.news') }}">News</a></li>
+    </ul>
+  </nav>
+</header>
+{% block content %}{% endblock %}
+<footer>
+      <p>&copy; powered by Lance</p>
+</footer>
+</body>
+</html>

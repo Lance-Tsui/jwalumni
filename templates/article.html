@@ -13,7 +13,7 @@
     <div class="container">
         <div class="left-column">
             <p>{% if article %}
-                {{ article }}
+                {{ article[3].strftime("%Y-%m-%d") }}
 
                 {% endif %}</p>
         </div>

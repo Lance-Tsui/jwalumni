@@ -25,11 +25,6 @@ class News:
     def find_news_content(title):
         cur = mysql.connection.cursor()
         cur.execute(
-            'SELECT title, summary, content, publishdate, name FROM alu_news A JOIN alu_editor B on A.publishby = B.Id where title=' + title)
-        rows = cur.fetchall()
-        rows = list(rows)
-        news = []
-        for row in rows:
-            new = News(row[0], row[1], row[2], row[3], row[4])
-            news.append(new)
-        return news
+            'SELECT title, summary, content, publishdate, name FROM alu_news A JOIN alu_editor B on A.publishby = B.Id where title = "' + title + '"')
+        rows = cur.fetchone()
+        return rows

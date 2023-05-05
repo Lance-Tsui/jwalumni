@@ -5,8 +5,6 @@ views_bp = Blueprint('views', __name__)
 
 # Import the views
 from .home import *
-from .about import *
-
-# Register the views with the Flask app
-def register_views(app):
-    app.register_blueprint(views_bp)
+from .news import *
+from .explore import *
+from .article import *

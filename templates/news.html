@@ -7,22 +7,15 @@
 <body>
     <h1>Welcome to my Flask app!</h1>
     <p>This is the news page.</p>
-    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('views.home') }}">Home</a>
 
     <div class="container">
         <div class="left-column">
             <h2>Summary</h2>
             {% for new in news %}
-                    <li>{{new.title}}</li>
+                    <a href="/article/{{ new.title }}"> {{new.title}} </a></li>
             {% endfor %}
         </div>
-        <div class="right-column">
-            <h2>Content</h2>
-                {% for new in news %}
-                    <li>{{new.title}} {{new.summary}} {{new.content}} {{new.publishdate}} {{new.name}}</li>
-                {% endfor %}
-        </div>
     </div>
-	
 </body>
 </html>

@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-<form id="search-form" action="{{ url_for('views.explore') }}" method="get">
-  <input id="search-input" type="text" name="q" placeholder="Search...">
-</form>
+<input id="search-input" type="text" placeholder="Search...">
+<label for="dropdown">Select Region:</label>
+<select name="dropdown" id="dropdown">
+	<option value="">All</option>
+	<option value="alevel">ALevel</option>
+	<option value="ap">AP</option>
+</select>
 
 <div id="search-results">
 
@@ -11,17 +15,35 @@
 		<li>{{user.title}} {{user.region}} </li>
 	    {% endfor %}
 	</ul>
-
+	
 </div>
+
+{% endblock %}
+{% block scripts %}
 <script>
 $(document).ready(function() {
-  $('#search-input').keyup(function() {
-    var query = $(this).val();
-    $.get('/search', {'q': query}, function(data) {
-      $('#search-results').html(data);
+	var searchResults = $('#search-results').html();
+	$('#search-input').on('input', function() {
+	var query = $(this).val();
+	var drop = $('#dropdown').val();
+	$.getJSON('/search', {'q': query, 'd': drop}, function(data) {
+    $('#search-results ul').html('');
+    $.each(data.users, function(index, user) {
+        $('#search-results ul').append('<li>' + user.title + ' ' + user.region + '</li>');
     });
-  });
+});
+	});
+
+	$('#dropdown').on('change', function(){
+		var query = $('#search-input').val();
+		var drop = $(this).val();
+		$.getJSON('/search', {'q': query, 'd': drop}, function(data) {
+			$('#search-results ul').html('');
+			$.each(data.users, function(index, user) {
+				$('#search-results ul').append('<li>' + user.title + ' ' + user.region + '</li>');
+			});
+		});
+	});
 });
 </script>
-
 {% endblock %}

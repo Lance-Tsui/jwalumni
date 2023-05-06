@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Flask App -- News Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    <h1>Welcome to my Flask app!</h1>
-    <p>This is the news page.</p>
-    <a href="{{ url_for('views.home') }}">Home</a>
-
+{% extends 'base.html' %}
+{% block content %}
     <div class="container">
         <div class="left-column">
             <h2>Summary</h2>
@@ -17,5 +8,4 @@
             {% endfor %}
         </div>
     </div>
-</body>
-</html>
+{% endblock %}

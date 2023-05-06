@@ -3,4 +3,5 @@
   bottom: 0;
   width: 100%;
   height: 60px; /* 或其他 footer 高度 */
+  text-align: center;
 }

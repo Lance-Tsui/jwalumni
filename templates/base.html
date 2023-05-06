@@ -4,6 +4,7 @@
   <title>{% block title %}Alumni Database{% endblock %}</title>
   {% for filename in os.listdir('static/css') if filename.endswith('.css') %}
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/' + filename) }}">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   {% endfor %}
 </head>
 <body>

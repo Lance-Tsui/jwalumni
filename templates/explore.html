@@ -1,8 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
+<form id="search-form" action="{{ url_for('views.explore') }}" method="get">
+  <input id="search-input" type="text" name="q" placeholder="Search...">
+</form>
+
+<div id="search-results">
+
     <ul>
     	{% for user in users %}
 		<li>{{user.title}} {{user.region}} </li>
 	    {% endfor %}
 	</ul>
+
+</div>
+<script>
+$(document).ready(function() {
+  $('#search-input').keyup(function() {
+    var query = $(this).val();
+    $.get('/search', {'q': query}, function(data) {
+      $('#search-results').html(data);
+    });
+  });
+});
+</script>
+
 {% endblock %}

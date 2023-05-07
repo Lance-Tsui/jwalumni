@@ -5,3 +5,12 @@
   height: 60px; /* 或其他 footer 高度 */
   text-align: center;
 }
+
+.copyright
+{
+    overflow: hidden;
+    padding: 3em 0em;
+    border-top: 20px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    background: #4CAF50;
+}

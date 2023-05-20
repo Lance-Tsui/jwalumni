@@ -3,6 +3,7 @@
   padding: 20px;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
 }
 
 .header h1 {
@@ -28,3 +29,15 @@
   color: #ff0000;
 }
 
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  margin-right: 10px;
+}
+
+.nav-list li:last-child {
+  margin-right: 0;
+}

@@ -1,5 +1,6 @@
 from models import mysql
 
+
 # Define the User model
 class User:
     def __init__(self, title, region):
@@ -16,5 +17,5 @@ class User:
         for row in rows:
             user = User(row[0], row[1])
             users.append(user)
-            
+
         return users

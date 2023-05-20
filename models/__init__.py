@@ -1,4 +1,3 @@
-from flask import current_app
 from flask_mysqldb import MySQL
 
 # Initialize the Flask app instance

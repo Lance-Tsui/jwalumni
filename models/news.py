@@ -1,5 +1,6 @@
 from models import mysql
 
+
 # Define the News model
 class News:
     def __init__(self, title, summary=None, content=None, publishdate=None, publishby=None):

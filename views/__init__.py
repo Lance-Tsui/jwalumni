@@ -8,3 +8,4 @@ from .home import *
 from .news import *
 from .explore import *
 from .article import *
+from .login import *

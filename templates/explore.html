@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<section class="explore-section">
 <input id="search-input" type="text" placeholder="Search...">
 <label for="dropdown">Select Region:</label>
 <select name="dropdown" id="dropdown">
@@ -46,4 +47,5 @@ $(document).ready(function() {
 	});
 });
 </script>
+</section>
 {% endblock %}

@@ -1,16 +1,44 @@
 .footer {
+  background-color: #ebebeb;
   position: absolute;
   bottom: 0;
   width: 100%;
   text-align: center;
-  background-color: #f2f2f2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.copyright
-{
-    overflow: hidden;
-    padding: 3em 0em;
-    border-top: 20px solid rgba(255, 255, 255, 0.08);
-    text-align: center;
-    background: #4CAF50;
+.footer .copyright {
+  overflow: hidden;
+  padding: 3em 0em;
+  border-top: 20px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .copyright p {
+  margin: 0;
+}
+
+.footer .contact {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .contact li {
+  margin: 0 10px;
+}
+
+.footer .contact li a {
+  color: #666666;
+  font-size: 18px;
+}
+
+.footer .contact li a:hover {
+  color: #ff0000;
 }

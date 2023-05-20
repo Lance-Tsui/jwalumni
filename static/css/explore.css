@@ -1,21 +1,26 @@
-.article-section {
+.explore-section {
   padding: 20px;
 }
 
-h1 {
-  font-size: 24px;
-  color: #333333;
+#search-input {
+  padding: 8px;
+  width: 200px;
+  margin-right: 10px;
 }
 
-p {
-  font-size: 16px;
-  color: #666666;
+label {
+  margin-right: 10px;
 }
 
-.container {
-  display: flex;
+#dropdown {
+  padding: 8px;
 }
 
-.left-column {
-  flex: 1;
+#search-results ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#search-results li {
+  margin-bottom: 5px;
 }
